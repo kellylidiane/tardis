@@ -1,5 +1,6 @@
 :root {
     --azul-tardis: #003B6F;
+    --tardis-sombreada: #001527;
 }
 body {
     font-size: 100%;
@@ -58,29 +59,6 @@ body {
     border-radius: 140%;
     top: 46%;
     left: -5%;
-}
-
-.area-3 {
-    position: absolute;
-    width: 0;
-    height: 20px;
-    border-radius: 30%;
-    top: 14%;
-    left: 86%;
-    border-top: 50px solid transparent;
-    border-right: 100px solid #3e5e16;
-    border-bottom: 50px solid transparent;
-}
-
-.area-3:after {
-    position: relative;
-    content: "\00a0 \00a0 \00a0";
-    font-size: 17px;
-    background-color: #3e5e16;
-    border-radius: 100%;
-    width: 100px;
-    height: 120px;
-    left: -7px;
 }
 
 .nuvem-1 {
@@ -157,7 +135,7 @@ div.cratera-grande:nth-of-type(1) {
 }
 
 div.cratera-grande:nth-of-type(2) {
-    top: 4%;
+    top: 2%;
     left: 55%;
 }
 
@@ -193,18 +171,18 @@ div.cratera-pequena:nth-of-type(4) {
 }
 
 div.cratera-pequena:nth-of-type(5) {
-    top: -1%;
+    top: -4%;
     left: 57%;
 }
 
 .tardis {
-    position: absolute;
+    position: fixed;
     right: 10%;
-    bottom: 10%;
+    bottom: 16%;
     width: 294px;
     height: 521px;
-    /* -webkit-animation: surgir 3s 7;
-    animation: surgir 3s 7; */
+    -webkit-animation: surgir 3s 4;
+    animation: surgir 3s 4; 
 }
 
 .tardis:before {
@@ -266,8 +244,8 @@ div.cratera-pequena:nth-of-type(5) {
     background-color: white;
     border-radius: 100%;
     box-shadow: 0px 0px 60px 70px white;
-    -webkit-animation: piscar 3s 7;
-    animation: piscar 3s 7;
+    -webkit-animation: piscar 3s 4;
+    animation: piscar 3s 4;
 }
 
 
@@ -289,7 +267,7 @@ div.cratera-pequena:nth-of-type(5) {
     width: 12%;
     height: 94%;
     transform: skew(-27deg) rotate(63deg);
-    background-color: #002342;
+    background-color: var(--tardis-sombreada);
     z-index: -1;
     border: 1px solid black;
 }
@@ -312,7 +290,7 @@ div.cratera-pequena:nth-of-type(5) {
     width: 12%;
     height: 94%;
     transform: skew(-27deg) rotate(63deg);
-    background-color: #002342;
+    background-color:  var(--tardis-sombreada);
     z-index: -1;
     border: 1px solid black;
 }
@@ -328,18 +306,6 @@ div.cratera-pequena:nth-of-type(5) {
     overflow: hidden;
 }
 
-.tardis-3d {
-    position: absolute;
-    left: -71%;
-    bottom: 42.6%;
-    transform: rotate(-90deg);
-    border-bottom: 16px solid #002342;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    height: 0;
-    width: 143%;
-}
-
 .tardis-3:after {
     position: absolute;
     content: "\00a0 \00a0 ";
@@ -350,6 +316,42 @@ div.cratera-pequena:nth-of-type(5) {
     border-radius: 50%;
     background-color: transparent;
     box-shadow: 70px -50px 120px 26px inset #001a33c7;
+}
+
+.tardis-3d {
+    position: absolute;
+    left: -71%;
+    bottom: 42.6%;
+    transform: rotate(-90deg);
+    border-bottom: 16px solid var(--tardis-sombreada);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    height: 0;
+    width: 143%;
+}
+.tardis-3d:before {
+    content: "\00a0 \00a0 ";
+    position: absolute;
+    width: 209px;
+    height: 16px;
+    transform: skew(30deg);
+    background: transparent;
+    right: -5px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.tardis-3d:after {
+    content: "\00a0 \00a0 ";
+    position: absolute;
+    width: 209px;
+    height: 16px;
+    transform: skew(-22deg);
+    background: transparent;
+    left: -4px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+
 }
 
 .placa {
@@ -565,7 +567,7 @@ div.porta:nth-of-type(3) {
     content: "\00a0 \00a0 ";
     width: 13%;
     height: 100%;
-    background-color: #002342;
+    background-color:  var(--tardis-sombreada);
     border: 2px solid black;
     bottom: 32%;
     left: -8%;
@@ -577,12 +579,24 @@ div.porta:nth-of-type(3) {
     content: "\00a0 \00a0 ";
     position: absolute;
     left: -7%;
-    bottom: -6%;
+    bottom: -8%;
     width: 5%;
     height: 144%;
     transform: skew(45deg) rotate(45deg);
-    background-color: #002342;
+    background-color: var(--tardis-sombreada);
     border: 1px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.estrela-e-raio {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    -webkit-animation: mover 10s 1;
+    animation: mover 10s 1;
+    z-index: -4;
+    opacity: 0;
 }
 
 .estrela-da-morte {
@@ -591,10 +605,12 @@ div.porta:nth-of-type(3) {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    z-index: -2;
+    z-index: -5;
     box-shadow: 0px 0px 10px 10px #5e5e5eb6;
 
     overflow: hidden;
+    -webkit-animation: diminuir 10s 1;
+    animation: diminuir 10s 1;
 }
 
 .estrela-da-morte:after {
@@ -615,11 +631,10 @@ div.porta:nth-of-type(3) {
     width: 95%;
     height: 2%;
     background-color: #303030;
-    border-top: 4px solid lightgray;
-    border-bottom: 4px solid lightgray;
+    border-top: 4px solid #adadad;
+    border-bottom: 4px solid #adadad;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-
 }
 
 .circulo-estrela {
@@ -637,12 +652,10 @@ div.porta:nth-of-type(3) {
 .circulo-estrela:after {
     content: "\00a0 \00a0 ";
     position: absolute;
-    width: 90%;
-    height: 90%;
-    top: 19%;
-    left: 36%;
-    background-color: #11111161;
-    box-shadow: -2px -2px 2px #11111161;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-shadow: 6px 5px 2px 6px inset #1111115c;
     border-radius: 100%;
 }
 
@@ -669,6 +682,45 @@ div.porta:nth-of-type(3) {
     border-radius: 100%;
 }
 
+.raio {
+    position: absolute;
+    background-color: lime;
+    height: 2px;
+    width: 400px;
+    box-shadow: 0px 0px 10px 3px lime;
+    transform: rotate(45deg);
+    top: 164px;
+    left: 0px;
+    -webkit-animation: disparar .6s 1;
+    animation: disparar .6s 1;
+    animation-delay: 4.5s;
+    opacity: 0;
+}
+
+.raio:before {
+    content: "\00a0 \00a0 ";
+    position: absolute;
+    background-color: lime;
+    height: 2px;
+    width: 20px;
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 10px 3px lime;
+    top: 0px;
+    left: -11px;
+}
+
+.raio:after {
+    content: "\00a0 \00a0 ";
+    position: absolute;
+    background-color: lime;
+    height: 2px;
+    width: 20px;
+    transform: rotate(70deg);
+    box-shadow: 0px 0px 10px 3px lime;
+    top: 0px;
+    left: -11px;
+}
+
 .estrela-da-morte table {
     position: absolute;
     width: 110%;
@@ -676,72 +728,104 @@ div.porta:nth-of-type(3) {
     color: white;
     border-spacing: 0;
     z-index: -1;
-
 }
 
 .estrela-da-morte table td{
-    border: 1px solid white;
+    border-top: 2px solid #888888;
 }
 
-.estrela-da-morte table tr:nth-child(1) td:nth-child(even){
-    position: relative;
-    border-bottom: 24px solid #505050;
-    /* border-bottom: 24px solid red; */
-    border-left: 10px solid transparent;
-    border-right: 8px solid transparent;
-    height: 0.1px;
-    width: 100px;
+.estrela-da-morte table tr{
+    background-color: #666666;
+}
+.estrela-da-morte table tr td:after{
+    content: "\00a0 \00a0 ";
+    position: absolute;
+    background-color: #888888;
+    height: 15.3%;
+    width: 4px;
+    
+}
+/* LINHA 1 */
+.estrela-da-morte table tr:nth-child(1) td:nth-child(even):after{
+    height: 20%;
+    transform: rotate(50deg);
+    top: -2%;
 }
 
-.estrela-da-morte table tr:nth-child(1) td:nth-child(odd){
-    position: relative;
-    transform: rotate(-180deg);
-    border-bottom: 24px solid #505050;
-    border-left: 8px solid transparent;
-    border-right: 10px solid transparent;
-    height: 0.1px;
-    width: 100px;
+.estrela-da-morte table tr:nth-child(1) td:nth-child(odd):after{
+    height: 20%;
+    transform: rotate(-50deg);
+    top: -2%;
 }
 
-.estrela-da-morte table tr:nth-child(2) td:nth-child(even){
-    position: relative;
-    border-bottom: 24px solid #505050;
-    /* border-bottom: 24px solid red; */
-    border-left: 8px solid transparent;
-    border-right: 6px solid transparent;
-    height: 0.1px;
-    width: 100px;
+/* LINHA 2 */
+.estrela-da-morte table tr:nth-child(2) td:nth-child(even):after{
+    transform: rotate(27deg);
+    top: 13.8%;
 }
 
-.estrela-da-morte table tr:nth-child(2) td:nth-child(odd){
-    position: relative;
-    transform: rotate(-180deg);
-    border-bottom: 24px solid #505050;
-    border-left: 6px solid transparent;
-    border-right: 8px solid transparent;
-    height: 0.1px;
-    width: 100px;
+.estrela-da-morte table tr:nth-child(2) td:nth-child(odd):after{
+    transform: rotate(-27deg);
+    top: 13.8%;
 }
 
-.estrela-da-morte table tr:nth-child(3) td:nth-child(odd){
-    position: relative;
-    border-bottom: 10px solid #505050;
-    /* border-bottom: 24px solid red; */
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    height: 0.1px;
-    width: 100px;
+/* LINHA 3 */
+.estrela-da-morte table tr:nth-child(3) td:nth-child(even):after{
+    transform: rotate(10deg);
+    top: 27.8%;
 }
 
-.estrela-da-morte table tr:nth-child(3) td:nth-child(even){
-    position: relative;
-    transform: rotate(-180deg);
-    border-bottom: 10px solid #505050;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    height: 0.1px;
-    width: 100px;
+.estrela-da-morte table tr:nth-child(3) td:nth-child(odd):after{
+    transform: rotate(-10deg);
+    top: 27.8%;
 }
+
+/* LINHA 4 */
+.estrela-da-morte table tr:nth-child(4) td:after{
+    top: 43%;
+    margin-left: 3%;
+    width: 3px;
+}
+
+/* LINHA 5 */
+.estrela-da-morte table tr:nth-child(5) td:nth-child(even):after{
+    transform: rotate(-10deg);
+    top: 57%;
+}
+
+.estrela-da-morte table tr:nth-child(5) td:nth-child(odd):after{
+    transform: rotate(10deg);
+    top: 57%;
+}
+
+/* LINHA 6 */
+.estrela-da-morte table tr:nth-child(6) td:after{
+    margin-left: 14%;
+    height: 18%;
+    top: 70%;
+}
+.estrela-da-morte table tr:nth-child(6) td:nth-child(even):after{
+    transform: rotate(-30deg);
+
+}
+.estrela-da-morte table tr:nth-child(6) td:nth-child(odd):after{
+    transform: rotate(30deg);
+}
+
+/* LINHA 7 */
+.estrela-da-morte table tr:nth-child(7) td:after{
+    height: 22%;
+    top: 82.5%;
+    margin-left: 8%;
+}
+.estrela-da-morte table tr:nth-child(7) td:nth-child(even):after{
+    transform: rotate(-45deg);
+
+}
+.estrela-da-morte table tr:nth-child(7) td:nth-child(odd):after{
+    transform: rotate(45deg);
+}
+
 
 @-webkit-keyframes piscar {
     0% {opacity: 1;}
@@ -765,4 +849,86 @@ div.porta:nth-of-type(3) {
     0% {opacity: 1;}
     50% {opacity: .1;}
     100% {opacity: 1;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mover {
+    0% {
+        left:-20%; 
+        top:50%;
+        opacity: 1;
+    }
+    50% {
+        left: 28%;
+        top: 36%;
+        opacity: 1;
+    }
+    100% {
+        left:110%; 
+        top:0%;
+        opacity: 1;
+    }
+}
+  
+  /* Standard syntax */
+@keyframes mover {
+    0% {
+        left:-20%; 
+        top:50%;
+        opacity: 1;
+    }
+    50% {
+        left: 24%;
+        top: 39%;
+        opacity: 1;
+    }
+    100% {
+        left:110%; 
+        top:-20%;
+        opacity: 1;
+    }
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes diminuir {
+    0%   {
+        width: 150px;
+        height: 150px;
+    }
+    50% {
+        width: 80px;
+        height: 80px;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+}
+  
+  /* Standard syntax */
+@keyframes diminuir {
+    0%   {
+        width: 150px;
+        height: 150px;
+    }
+    50% {
+        width: 80px;
+        height: 80px;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@-webkit-keyframes disparar {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+  
+@keyframes disparar {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
