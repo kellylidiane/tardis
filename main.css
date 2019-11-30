@@ -1,5 +1,5 @@
 :root {
-    --azul-tardis: #003B6F;
+    --azul-tardis: #013868;
     --tardis-sombreada: #001527;
 }
 body {
@@ -251,7 +251,7 @@ div.cratera-pequena:nth-of-type(5) {
 
 .tardis-1 {
     position: relative;
-    background-color: var(--azul-tardis);
+    background-color: #012a4c;
     border: 2px solid black;
     width: 64.17%;
     height: 3%;
@@ -274,7 +274,7 @@ div.cratera-pequena:nth-of-type(5) {
 
 .tardis-2 {
     position: relative;
-    background-color: var(--azul-tardis);
+    background-color: #012a4c;
     border: 2px solid black;
     width: 78.23%;
     height: 3%;
@@ -315,7 +315,8 @@ div.cratera-pequena:nth-of-type(5) {
     height: 119%;
     border-radius: 50%;
     background-color: transparent;
-    box-shadow: 70px -50px 120px 26px inset #001a33c7;
+
+    box-shadow: 30px -30px 120px 26px inset #000102c7;
 }
 
 .tardis-3d {
@@ -511,6 +512,7 @@ div.porta:nth-of-type(3) {
 }
 .quadrados-porta td {
     border: 2px solid black;
+    box-shadow: 0px 0px 4px inset black;
 }
 
 .placa-porta {
@@ -558,8 +560,8 @@ div.porta:nth-of-type(3) {
     position: relative;
     width: 100%;
     height: 5.24%;
-    background-color: #00284c;
-    border: 2px solid black;
+    background: rgb(0,17,32);
+    background: linear-gradient(90deg, rgba(0,17,32,1) 0%, rgba(0,26,49,1) 100%);    border: 2px solid black;
     top: -1px;
 }
 
@@ -593,8 +595,8 @@ div.porta:nth-of-type(3) {
     position: absolute;
     width: 30%;
     height: 30%;
-    -webkit-animation: mover 10s 1;
-    animation: mover 10s 1;
+    -webkit-animation: mover 12s 1;
+    animation: mover 12s 1;
     z-index: -4;
     opacity: 0;
 }
@@ -609,8 +611,8 @@ div.porta:nth-of-type(3) {
     box-shadow: 0px 0px 10px 10px #5e5e5eb6;
 
     overflow: hidden;
-    -webkit-animation: diminuir 10s 1;
-    animation: diminuir 10s 1;
+    -webkit-animation: diminuir 12s 1;
+    animation: diminuir 12s 1;
 }
 
 .estrela-da-morte:after {
@@ -693,7 +695,7 @@ div.porta:nth-of-type(3) {
     left: 0px;
     -webkit-animation: disparar .6s 1;
     animation: disparar .6s 1;
-    animation-delay: 4.5s;
+    animation-delay: 5.5s;
     opacity: 0;
 }
 
